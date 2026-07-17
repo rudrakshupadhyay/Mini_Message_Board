@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/newStyles.css" />
+  </head>
+  <body>
+    <div class="formContainer">
+      <form action="/new" method="POST" class="newBookForm">
+        <label for="name"> Name:- </label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name here..."
+          required
+        />
+        <br /><br />
+        <label for="messageArea">Message:-</label><br />
+        <textarea
+          name="message"
+          id="messageArea"
+          rows="5"
+          cols="30"
+          placeholder="Enter your message here..."
+          required
+        ></textarea>
+        <button type="submit" class="submitBtn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

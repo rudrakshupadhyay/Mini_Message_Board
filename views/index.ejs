@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h1>Mini Message Board</h1>
+        <a href="/new" class="newMessageBnt">New Message</a>
+      </div>
+      <div class="messageBar">
+        <ul class="messages">
+          <% messages.forEach(function(message,index) { %>
+            <%- include('portion/messageBar', { message: message , index:index}) %>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
