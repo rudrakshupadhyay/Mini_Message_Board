@@ -14,7 +14,7 @@ indexRouter.get("/new", (req, res) => {
 
 indexRouter.get("/message/:id", (req, res) => {
   const index = req.params.id;
-  res.send(`Hello we opened the message on index: ${index}`);
+  res.render("messageOpen", { currMessage: messages[index] });
 });
 
 indexRouter.post("/new", newMessage);

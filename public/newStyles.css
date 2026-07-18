@@ -35,24 +35,24 @@ textarea {
   border: 2px solid black;
 }
 
-.newBookForm{
-    width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    text-align: center;
+.newBookForm {
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
 }
 
-.submitBtn{
-    background-color: rgb(72, 92, 87);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+.submitBtn {
+  background-color: rgb(72, 92, 87);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 }

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/messageStyle.css" />
+    </head>
+    <body>
+        <div class="messageContainer">
+            <h2>Message Details</h2>
+            <h3><%= currMessage.user %></h3>
+            <p><% currMessage.text %></p>
+            <% const date = currMessage.added.getDate(); %>
+            <% const month = currMessage.added.getMonth() + 1; %>
+            <% const year = currMessage.added.getFullYear(); %>
+            <% const hours = currMessage.added.getHours(); %>
+            <% const minutes = currMessage.added.getMinutes(); %>
+            <div>
+                <strong>Posted:</strong>
+                <i>
+                    <%= date %>/<%= month %>/<%= year %>,
+                    <%= hours %>:<%= String(minutes).padStart(2, "0") %>
+                </i>
+            </div>
+            <a href="/" class="backBnt">Back to home</a>
+        </div>
+    </body>
+</html>
