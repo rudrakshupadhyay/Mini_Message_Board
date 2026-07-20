@@ -10,7 +10,7 @@
       </div>
       <ul class="messages">
           <% messages.forEach(function(message,index) { %>
-            <%- include('portion/messageBar', { message: message , index:index}) %>
+            <%- include('portion/messageBar', { message: message , index:index+1}) %>
           <% }); %>
       </ul>
     </div>
