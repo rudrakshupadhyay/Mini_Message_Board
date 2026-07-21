@@ -1,6 +1,10 @@
 import { Client } from "pg";
 import { loadEnvFile } from "node:process";
-loadEnvFile();
+
+if (!process.env.RENDER) {
+  loadEnvFile();
+}
+
 const SQL = `
 SET TIME ZONE 'Asia/Kolkata';
 CREATE TABLE IF NOT EXISTS messages (

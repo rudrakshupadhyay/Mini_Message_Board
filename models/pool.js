@@ -1,7 +1,10 @@
 import { Pool } from "pg";
 import { loadEnvFile } from "node:process";
 
-loadEnvFile();
+if (!process.env.RENDER) {
+  loadEnvFile();
+}
+
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
