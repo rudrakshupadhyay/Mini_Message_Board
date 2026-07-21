@@ -3,6 +3,10 @@
     <link rel="stylesheet" href="/newStyles.css" />
   </head>
   <body>
+    <div class="newMessageTop">
+      <h1>Enter the new message</h1>
+      <%- include("portion/errors") %>
+    </div>
     <div class="formContainer">
       <form action="/new" method="POST" class="newBookForm">
         <label for="name"> Name:- </label><br />

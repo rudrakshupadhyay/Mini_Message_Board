@@ -4,12 +4,40 @@ import {
   getMessageById,
 } from "../models/queries.js";
 
-async function newMessage(req, res) {
-  const username = req.body.name;
-  const text = req.body.message;
-  await insertMessagedb(username, text);
-  res.redirect("/");
-}
+import { body, validationResult, matchedData } from "express-validator";
+
+const validateUser = [
+  body("name")
+    .trim()
+    .notEmpty()
+    .withMessage("Name is required")
+    .isLength({ max: 50 })
+    .withMessage("Name should be at most 50 characters long")
+    .matches(/^[A-Za-z]+(?: [A-Za-z]+)*$/)
+    .withMessage("Name should contain only letters and spaces"),
+
+  body("message")
+    .trim()
+    .notEmpty()
+    .withMessage("Message is required")
+    .isLength({ max: 200 })
+    .withMessage("Message should be at most 200 characters long"),
+];
+
+const newMessage = [
+  ...validateUser,
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).render("new", {
+        errors: errors.array(),
+      });
+    }
+    const { name, message } = matchedData(req);
+    await insertMessagedb(name, message);
+    res.redirect("/");
+  },
+];
 
 async function getMessageList(req, res) {
   const messageList = await getAllMessage();
